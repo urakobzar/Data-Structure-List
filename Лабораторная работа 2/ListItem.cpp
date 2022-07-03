@@ -1,6 +1,6 @@
 #include"ListItem.h"
 #include <iostream>
-/*#include<chrono>          //Для замера времени
+/*#include<chrono>          //Р”Р»СЏ Р·Р°РјРµСЂР° РІСЂРµРјРµРЅРё
 using namespace std;
 using namespace chrono;*/
 
@@ -48,7 +48,7 @@ void AddTail(List& list, int addElement)
 
 void AddIndex(List& list, int addElement, int index)
 {
-    //steady_clock::time_point startProcess = steady_clock::now();     //Для замера времени
+    //steady_clock::time_point startProcess = steady_clock::now();     //Р”Р»СЏ Р·Р°РјРµСЂР° РІСЂРµРјРµРЅРё
     if (index == list.Count + 1)
     {
         AddTail(list, addElement);
@@ -61,7 +61,7 @@ void AddIndex(List& list, int addElement, int index)
     }
     int counter = 1;
     Node* insertBefore = list.Head;
-    while (counter < index) //Сложность О(n)
+    while (counter < index) //РЎР»РѕР¶РЅРѕСЃС‚СЊ Рћ(n)
     {
         insertBefore = insertBefore->Next;
         counter++;
@@ -77,16 +77,16 @@ void AddIndex(List& list, int addElement, int index)
     newElement->Prev = previousInsert;
     insertBefore->Prev = newElement;
     list.Count++;
-    //steady_clock::time_point endProcess = steady_clock::now();        //Для замера времени
-    //cout << "Time difference: " << duration_cast<nanoseconds>(endProcess - startProcess).count() << "[ns]" << endl << endl;       //Для замера времени
+    //steady_clock::time_point endProcess = steady_clock::now();        //Р”Р»СЏ Р·Р°РјРµСЂР° РІСЂРµРјРµРЅРё
+    //cout << "Time difference: " << duration_cast<nanoseconds>(endProcess - startProcess).count() << "[ns]" << endl << endl;       //Р”Р»СЏ Р·Р°РјРµСЂР° РІСЂРµРјРµРЅРё
 }
 
 void Delete(List& list, int index)
 {
-    //steady_clock::time_point startProcess = steady_clock::now();     //Для замера времени
+    //steady_clock::time_point startProcess = steady_clock::now();     //Р”Р»СЏ Р·Р°РјРµСЂР° РІСЂРµРјРµРЅРё
     int counter = 1;
     Node* del = list.Head;
-    while (counter < index) //Сложность O(n)
+    while (counter < index) //РЎР»РѕР¶РЅРѕСЃС‚СЊ O(n)
     {
         del = del->Next;
         counter++;
@@ -111,8 +111,8 @@ void Delete(List& list, int index)
     }
     delete del;
     list.Count--;
-    //steady_clock::time_point endProcess = steady_clock::now();     //Для замера времени
-    //cout << "Time difference: " << duration_cast<nanoseconds>(endProcess - startProcess).count() << "[ns]" << endl << endl;     //Для замера времени
+    //steady_clock::time_point endProcess = steady_clock::now();     //Р”Р»СЏ Р·Р°РјРµСЂР° РІСЂРµРјРµРЅРё
+    //cout << "Time difference: " << duration_cast<nanoseconds>(endProcess - startProcess).count() << "[ns]" << endl << endl;     //Р”Р»СЏ Р·Р°РјРµСЂР° РІСЂРµРјРµРЅРё
 }
 
 void DeleteAll(List& list)
